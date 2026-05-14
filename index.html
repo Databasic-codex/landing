@@ -26,18 +26,24 @@ html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--white);font-family:"Inter",sans-serif;overflow-x:hidden}
 
 /* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 6%;height:70px;display:flex;align-items:center;justify-content:space-between;transition:.3s}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 4%;height:68px;display:flex;align-items:center;justify-content:space-between;gap:1rem;transition:.3s}
 nav.scrolled{background:rgba(10,2,5,.92);border-bottom:1px solid var(--border);backdrop-filter:blur(14px)}
-.logo{font-family:"Fraunces",serif;font-size:1.25rem;color:var(--white);font-weight:700;letter-spacing:-.01em}
+.logo{font-family:"Fraunces",serif;font-size:1.15rem;color:var(--white);font-weight:700;letter-spacing:-.01em;white-space:nowrap;flex-shrink:0}
 .logo span{color:var(--crimson)}
-.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center}
-.nav-links a{color:var(--gray);font-size:.875rem;font-weight:500;text-decoration:none;letter-spacing:.03em;text-transform:uppercase;transition:.2s}
+.nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center;flex-shrink:1;min-width:0}
+.nav-links a{color:var(--gray);font-size:.8rem;font-weight:500;text-decoration:none;letter-spacing:.03em;text-transform:uppercase;transition:.2s;white-space:nowrap}
 .nav-links a:hover{color:var(--white)}
-.nav-cta{background:var(--crimson);color:#fff;padding:.55rem 1.4rem;border-radius:6px;font-size:.875rem;font-weight:700;text-decoration:none;letter-spacing:.02em;transition:.2s}
+.nav-cta{background:var(--crimson);color:#fff;padding:.5rem 1.2rem;border-radius:6px;font-size:.8rem;font-weight:700;text-decoration:none;letter-spacing:.02em;transition:.2s;white-space:nowrap;flex-shrink:0}
 .nav-cta:hover{background:#C01840;transform:translateY(-1px)}
-.nav-app{color:var(--rose)!important;border:1px solid rgba(225,29,72,.4);border-radius:6px;padding:.45rem 1.1rem!important;font-size:.8rem!important;display:flex;align-items:center;gap:.4rem}
+.nav-app{color:var(--rose)!important;border:1px solid rgba(225,29,72,.4);border-radius:6px;padding:.4rem .9rem!important;font-size:.78rem!important;display:flex;align-items:center;gap:.35rem;white-space:nowrap}
 .nav-app:hover{background:rgba(225,29,72,.1)!important;border-color:var(--rose)!important;color:var(--white)!important}
-.nav-dot{width:6px;height:6px;background:#22C55E;border-radius:50%;animation:blink 2s infinite}
+.nav-dot{width:6px;height:6px;background:#22C55E;border-radius:50%;animation:blink 2s infinite;flex-shrink:0}
+@media(max-width:860px){
+  .nav-links li:nth-child(1),.nav-links li:nth-child(2),.nav-links li:nth-child(3){display:none}
+}
+@media(max-width:600px){
+  .nav-cta{display:none}
+}
 
 /* ── HERO ── */
 .hero{min-height:100vh;display:flex;align-items:center;padding:0 6%;position:relative;overflow:hidden}
@@ -550,17 +556,4 @@ const sio=new IntersectionObserver(entries=>{
     const el=e.target,target=+el.dataset.target,dur=1800
     let start=null
     const step=ts=>{
-      if(!start)start=ts
-      const p=Math.min((ts-start)/dur,1)
-      el.textContent=Math.floor(p*target)+(p<1?'':'')
-      if(p<1)requestAnimationFrame(step)
-      else el.textContent=target
-    }
-    requestAnimationFrame(step)
-    sio.unobserve(el)
-  })
-},{threshold:.5})
-statVals.forEach(el=>sio.observe(el))
-</script>
-</body>
-</html>
+      if(!start)s
