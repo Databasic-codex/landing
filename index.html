@@ -30,11 +30,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 6%;height:70px;dis
 nav.scrolled{background:rgba(10,2,5,.92);border-bottom:1px solid var(--border);backdrop-filter:blur(14px)}
 .logo{font-family:"Fraunces",serif;font-size:1.25rem;color:var(--white);font-weight:700;letter-spacing:-.01em}
 .logo span{color:var(--crimson)}
-.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center}
 .nav-links a{color:var(--gray);font-size:.875rem;font-weight:500;text-decoration:none;letter-spacing:.03em;text-transform:uppercase;transition:.2s}
 .nav-links a:hover{color:var(--white)}
 .nav-cta{background:var(--crimson);color:#fff;padding:.55rem 1.4rem;border-radius:6px;font-size:.875rem;font-weight:700;text-decoration:none;letter-spacing:.02em;transition:.2s}
 .nav-cta:hover{background:#C01840;transform:translateY(-1px)}
+.nav-app{color:var(--rose)!important;border:1px solid rgba(225,29,72,.4);border-radius:6px;padding:.45rem 1.1rem!important;font-size:.8rem!important;display:flex;align-items:center;gap:.4rem}
+.nav-app:hover{background:rgba(225,29,72,.1)!important;border-color:var(--rose)!important;color:var(--white)!important}
+.nav-dot{width:6px;height:6px;background:#22C55E;border-radius:50%;animation:blink 2s infinite}
 
 /* ── HERO ── */
 .hero{min-height:100vh;display:flex;align-items:center;padding:0 6%;position:relative;overflow:hidden}
@@ -47,18 +50,21 @@ nav.scrolled{background:rgba(10,2,5,.92);border-bottom:1px solid var(--border);b
 @keyframes drift3{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(-20px,20px) scale(.95)}66%{transform:translate(15px,-15px) scale(1.03)}}
 
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(225,29,72,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(225,29,72,.05) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%)}
-.hero-content{position:relative;z-index:2;max-width:680px}
+.hero-content{position:relative;z-index:2;max-width:700px}
 .hero-badge{display:inline-flex;align-items:center;gap:.6rem;background:rgba(225,29,72,.1);border:1px solid rgba(225,29,72,.3);color:var(--rose);padding:.4rem 1rem;border-radius:20px;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2.5rem}
 .badge-dot{width:6px;height:6px;background:var(--crimson);border-radius:50%;animation:blink 2s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
 h1{font-size:clamp(3rem,5.5vw,5rem);line-height:1.05;font-weight:800;letter-spacing:-.03em;margin-bottom:1.75rem}
 .grad-text{background:linear-gradient(135deg,var(--white) 0%,var(--rose) 45%,var(--crimson) 70%,var(--gold) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{font-size:1.15rem;color:var(--gray);line-height:1.8;margin-bottom:3rem;max-width:560px;font-weight:300}
+.hero-sub{font-size:1.15rem;color:var(--gray);line-height:1.8;margin-bottom:3rem;max-width:580px;font-weight:300}
 .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
 .btn-main{background:var(--crimson);color:#fff;padding:.85rem 2.2rem;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:.2s;letter-spacing:.01em}
 .btn-main:hover{background:#C01840;transform:translateY(-2px);box-shadow:0 8px 30px rgba(225,29,72,.4)}
 .btn-ghost{color:var(--gray);padding:.85rem 1.5rem;font-size:.95rem;text-decoration:none;border:1px solid var(--border);border-radius:8px;transition:.2s;display:flex;align-items:center;gap:.4rem;font-weight:500}
 .btn-ghost:hover{border-color:rgba(225,29,72,.35);color:var(--white)}
+.btn-app{background:rgba(225,29,72,.12);color:var(--rose);padding:.85rem 2rem;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;border:1px solid rgba(225,29,72,.35);transition:.2s;display:flex;align-items:center;gap:.5rem}
+.btn-app:hover{background:rgba(225,29,72,.22);color:#fff;transform:translateY(-2px);border-color:var(--rose)}
+.btn-app-dot{width:7px;height:7px;background:#22C55E;border-radius:50%;animation:blink 2s infinite}
 .hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;opacity:.4}
 .hero-scroll span{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gray)}
 .hero-scroll-line{width:1px;height:40px;background:linear-gradient(180deg,transparent,var(--rose));animation:scrollLine 2s ease-in-out infinite}
@@ -75,6 +81,38 @@ h1{font-size:clamp(3rem,5.5vw,5rem);line-height:1.05;font-weight:800;letter-spac
 .sv-gold{color:var(--gold)}
 .sv-white{color:var(--white)}
 .stat-lbl{font-size:.78rem;color:var(--gray);text-transform:uppercase;letter-spacing:.1em;font-weight:500}
+
+/* ── ORIGIN / CODEX ── */
+.origin{padding:8rem 6%;position:relative;overflow:hidden}
+.origin-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(245,158,11,.06),transparent 70%)}
+.origin-inner{display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:center;position:relative;z-index:1}
+.origin-quote{border-left:3px solid var(--crimson);padding-left:2rem;margin:2.5rem 0}
+.origin-quote blockquote{font-family:"Fraunces",serif;font-size:1.4rem;font-style:italic;line-height:1.6;color:var(--white);font-weight:300}
+.origin-quote cite{display:block;margin-top:1rem;font-size:.8rem;color:var(--gray);letter-spacing:.08em;text-transform:uppercase;font-style:normal}
+.origin-right{}
+.codex-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2.25rem 2rem;margin-bottom:1.25rem}
+.codex-card-head{display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem}
+.codex-card-icon{font-size:1.5rem}
+.codex-card h4{font-family:"Fraunces",serif;font-size:1.1rem;font-weight:700;letter-spacing:-.01em}
+.codex-card p{font-size:.875rem;color:var(--gray);line-height:1.7}
+.codex-word{font-family:"Fraunces",serif;font-size:3.5rem;font-weight:700;letter-spacing:-.05em;line-height:1;margin-bottom:.5rem}
+.codex-word span{color:var(--crimson)}
+.codex-etymology{font-size:.82rem;color:var(--gray2);letter-spacing:.06em;text-transform:uppercase;margin-bottom:1.5rem}
+
+/* ── GRUPO ── */
+.grupo{padding:6rem 6%;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.grupo-header{text-align:center;margin-bottom:3.5rem}
+.grupo-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border)}
+.grupo-card{background:var(--bg2);padding:2rem 1.5rem;text-align:center;transition:.25s;position:relative}
+.grupo-card::before{content:"";position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--crimson),transparent);transform:scaleX(0);transition:.3s}
+.grupo-card:hover{background:var(--bg3)}
+.grupo-card:hover::before{transform:scaleX(1)}
+.grupo-flag{font-size:1.75rem;display:block;margin-bottom:.75rem}
+.grupo-name{font-family:"Fraunces",serif;font-size:1rem;font-weight:700;margin-bottom:.35rem;letter-spacing:-.01em}
+.grupo-role{font-size:.75rem;color:var(--gray);line-height:1.5}
+.grupo-years{display:inline-block;margin-top:.6rem;font-size:.7rem;color:var(--gold);letter-spacing:.06em;font-weight:600}
+.grupo-card.main .grupo-name{color:var(--rose)}
+.grupo-card.main{background:rgba(225,29,72,.04)}
 
 /* ── PAIN ── */
 .pain{padding:8rem 6%;display:grid;grid-template-columns:1fr 1.1fr;gap:6rem;align-items:center}
@@ -129,6 +167,7 @@ h1{font-size:clamp(3rem,5.5vw,5rem);line-height:1.05;font-weight:800;letter-spac
 .cta h2{font-size:clamp(2.5rem,5vw,4.5rem);font-weight:800;letter-spacing:-.04em;margin-bottom:1.25rem;position:relative;line-height:1.05}
 .cta p{color:var(--gray);font-size:1.1rem;margin-bottom:1.5rem;position:relative;font-weight:300}
 .cta-domain{display:inline-block;background:rgba(225,29,72,.08);border:1px solid var(--border);padding:.55rem 1.5rem;border-radius:8px;font-size:.875rem;color:var(--gray2);font-family:monospace;margin-bottom:2.5rem;position:relative}
+.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;align-items:center;position:relative}
 
 /* ── FOOTER ── */
 footer{padding:2.5rem 6%;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
@@ -141,9 +180,16 @@ footer span{font-size:.8rem;color:var(--gray2)}
 .fi.v{opacity:1;transform:none}
 
 @media(max-width:900px){
-  .stats,.feat-grid{grid-template-columns:1fr 1fr}
-  .pain,.epanel.active{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .feat-grid{grid-template-columns:1fr 1fr}
+  .pain,.epanel.active,.origin-inner{grid-template-columns:1fr}
   .entity-tabs{flex-wrap:wrap}
+  .grupo-grid{grid-template-columns:1fr 1fr}
+  .cta-actions{flex-direction:column;align-items:center}
+}
+@media(max-width:600px){
+  .stats,.feat-grid,.grupo-grid{grid-template-columns:1fr}
+  .stat{border-right:none;border-bottom:1px solid var(--border)}
 }
 </style>
 </head>
@@ -152,9 +198,10 @@ footer span{font-size:.8rem;color:var(--gray2)}
 <nav id="nav">
   <div class="logo">Databasic<span>Codex</span></div>
   <ul class="nav-links">
+    <li><a href="#origen">Origen</a></li>
     <li><a href="#features">Módulos</a></li>
     <li><a href="#entidades">Entidades</a></li>
-    <li><a href="#tecnologia">Tecnología</a></li>
+    <li><a href="https://app.databasiccodex.com" class="nav-app"><span class="nav-dot"></span>Acceder al ERP</a></li>
   </ul>
   <a href="#contacto" class="nav-cta">Solicitar Demo</a>
 </nav>
@@ -167,16 +214,17 @@ footer span{font-size:.8rem;color:var(--gray2)}
   <div class="hero-content">
     <div class="hero-badge">
       <span class="badge-dot"></span>
-      ERP Editorial · Preview 2026
+      Plataforma Editorial · Grupo Editorial · LATAM
     </div>
     <h1>
-      Del catálogo<br>
-      <span class="grad-text">al balance.</span>
+      Nacimos en el libro.<br>
+      <span class="grad-text">Construimos el sistema.</span>
     </h1>
-    <p class="hero-sub">Un sistema de gestión diseñado desde adentro del negocio editorial. Distribuidoras, editoriales, logísticas y librerías — en una sola plataforma unificada y construida para durar.</p>
+    <p class="hero-sub">No somos una empresa de software que descubrió la industria editorial. Somos una familia con décadas en el mundo del libro que construyó la tecnología que la industria siempre necesitó — y nadie supo hacer.</p>
     <div class="hero-actions">
-      <a href="#features" class="btn-main">Explorar el sistema</a>
-      <a href="#entidades" class="btn-ghost">Ver entidades →</a>
+      <a href="https://app.databasiccodex.com" class="btn-app"><span class="btn-app-dot"></span>Acceder al ERP</a>
+      <a href="#origen" class="btn-main">Nuestra historia</a>
+      <a href="#features" class="btn-ghost">Ver el sistema →</a>
     </div>
   </div>
   <div class="hero-scroll">
@@ -187,246 +235,332 @@ footer span{font-size:.8rem;color:var(--gray2)}
 
 <div class="stats">
   <div class="stat fi">
-    <span class="stat-val sv-crimson" data-target="442">0</span>
-    <span class="stat-lbl">Miles de registros migrados</span>
+    <span class="stat-val sv-crimson">43K+</span>
+    <span class="stat-lbl">Registros migrados</span>
   </div>
   <div class="stat fi">
-    <span class="stat-val sv-rose" data-target="22">0</span>
+    <span class="stat-val sv-rose">22</span>
     <span class="stat-lbl">Módulos operativos</span>
   </div>
   <div class="stat fi">
-    <span class="stat-val sv-gold" data-target="4">0</span>
-    <span class="stat-lbl">Empresas del grupo</span>
+    <span class="stat-val sv-gold">60+</span>
+    <span class="stat-lbl">Años en la industria</span>
   </div>
   <div class="stat fi">
-    <span class="stat-val sv-white" data-target="27">0</span>
-    <span class="stat-lbl">Años de historial</span>
+    <span class="stat-val sv-white">5</span>
+    <span class="stat-lbl">Empresas del grupo</span>
   </div>
 </div>
 
-<section class="pain">
+<!-- ── ORIGEN ── -->
+<section class="origin" id="origen">
+  <div class="origin-bg"></div>
+  <div class="origin-inner">
+    <div class="origin-left fi">
+      <span class="section-eyebrow">De dónde venimos</span>
+      <h2 class="section-h2">Somos del libro.<br><em>Siempre lo fuimos.</em></h2>
+      <p class="section-lead" style="margin-bottom:1.5rem">Antes de escribir una línea de código, conocíamos el ISBN de memoria. Sabíamos qué es una remesa de consignación, cómo funciona una liquidación editorial, qué significa que Bonilla no cuadre con tu stock.</p>
+      <p class="section-lead" style="margin-bottom:1.5rem">Venimos de Edhasa — una editorial fundada hace más de 60 años en España, parte de nuestra historia familiar. Distribuimos libros en Argentina, representamos editoriales europeas en México, publicamos literatura infantil hace dos décadas. El libro no es nuestro oficio. Es nuestra cultura.</p>
+      <p class="section-lead">Cuando el software existente no entendió nuestro negocio, decidimos construir el nuestro. Databasic Codex es la respuesta a años de adaptar el negocio al sistema — al revés de cómo debería ser.</p>
+      <div class="origin-quote">
+        <blockquote>"El libro no es nuestro, pero lo tratamos como si fuera nuestro."</blockquote>
+        <cite>Ethos del negocio — Ladolibro México</cite>
+      </div>
+    </div>
+    <div class="origin-right fi" style="transition-delay:.15s">
+      <div class="codex-card" style="margin-bottom:1.5rem">
+        <div class="codex-word">Codex<span>.</span></div>
+        <div class="codex-etymology">Del latín CAUDEX — el libro encuadernado</div>
+        <p style="font-size:.875rem;color:var(--gray);line-height:1.7">Antes del códice, el conocimiento vivía en rollos de papiro — frágil, lineal, sin índice. El códice fue la revolución: encuadernó el saber, permitió indexarlo, referenciarlo, portarlo. Fue la primera base de datos de la humanidad.</p>
+        <p style="font-size:.875rem;color:var(--gray);line-height:1.7;margin-top:.75rem">Nos llamamos <strong style="color:var(--white)">Databasic Codex</strong> porque creemos que la tecnología bien diseñada hace por un negocio lo que el códice hizo por el conocimiento: lo organiza, lo hace accesible, lo hace durar.</p>
+      </div>
+      <div class="codex-card">
+        <div class="codex-card-head">
+          <div class="codex-card-icon">🏗️</div>
+          <h4>No un ERP de reemplazo</h4>
+        </div>
+        <p>La infraestructura tecnológica del grupo para los próximos 10 años. Empieza como ERP para Ladolibro México. Escala como plataforma de servicios editoriales para toda LATAM y España.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GRUPO EDITORIAL ── -->
+<section class="grupo" id="grupo">
+  <div class="grupo-header fi">
+    <span class="section-eyebrow">El grupo</span>
+    <h2 class="section-h2" style="max-width:500px;margin:0 auto">Una familia editorial.<br><em>Cinco empresas. Tres países.</em></h2>
+  </div>
+  <div class="grupo-grid">
+    <div class="grupo-card fi">
+      <span class="grupo-flag">🇪🇸</span>
+      <div class="grupo-name">Edhasa España</div>
+      <div class="grupo-role">Editorial de referencia. Proveedora principal del grupo en Argentina y México.</div>
+      <span class="grupo-years">+ de 60 años</span>
+    </div>
+    <div class="grupo-card fi" style="transition-delay:.05s">
+      <span class="grupo-flag">🇦🇷</span>
+      <div class="grupo-name">Edhasa Argentina</div>
+      <div class="grupo-role">Editorial de prestigio. Parte del corazón del grupo familiar.</div>
+      <span class="grupo-years">Décadas en el mercado</span>
+    </div>
+    <div class="grupo-card fi" style="transition-delay:.1s">
+      <span class="grupo-flag">🇦🇷</span>
+      <div class="grupo-name">La Brujita de Papel</div>
+      <div class="grupo-role">Editorial infantil. Literatura para los que aprenden a amar los libros.</div>
+      <span class="grupo-years">+ de 20 años</span>
+    </div>
+    <div class="grupo-card fi" style="transition-delay:.15s">
+      <span class="grupo-flag">🇦🇷</span>
+      <div class="grupo-name">RiversideAgency</div>
+      <div class="grupo-role">Distribuidora y representante de editoriales europeas en Argentina.</div>
+      <span class="grupo-years">Argentina</span>
+    </div>
+    <div class="grupo-card main fi" style="transition-delay:.2s">
+      <span class="grupo-flag">🇲🇽</span>
+      <div class="grupo-name">Ladolibro México ★</div>
+      <div class="grupo-role">Representante y distribuidora de editoriales europeas y latinoamericanas. Foco del MVP.</div>
+      <span class="grupo-years">Implementación actual</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── PAIN ── -->
+<section class="pain" id="pain">
   <div>
-    <span class="section-eyebrow fi">El problema</span>
+    <span class="section-eyebrow fi">El diagnóstico</span>
     <h2 class="section-h2 fi">Los ERP genéricos<br>no entienden<br><em>el mundo editorial</em></h2>
-    <p class="section-lead fi">Décadas de historia, múltiples empresas, catálogos de miles de títulos, circuitos de distribución propios. La industria editorial tiene una lógica que los sistemas horizontales nunca van a poder capturar.</p>
+    <p class="section-lead fi" style="margin-bottom:1.5rem">Pasamos años adaptando nuestro negocio a sistemas que nunca entendieron lo que hacemos. La consignación como workaround. El stock de Bonilla desincronizado. El tipo de cambio cargado a mano.</p>
+    <p class="section-lead fi">Construimos Databasic Codex desde la pregunta correcta: ¿cómo funciona una empresa de representación editorial de clase mundial, y cómo el software puede potenciar cada parte de ese negocio?</p>
   </div>
   <div class="pain-cards">
     <div class="pain-card fi">
       <div class="pain-icon">🗂️</div>
       <div>
-        <h4>Datos dispersos en silos</h4>
-        <p>Clientes, saldos, catálogo y stock en sistemas distintos que no se comunican entre sí.</p>
+        <h4>Consignación real, no workaround</h4>
+        <p>El corazón del negocio editorial tiene su propio módulo. Remesas, liquidaciones, ciclos — fluyen nativamente.</p>
       </div>
     </div>
     <div class="pain-card fi">
       <div class="pain-icon">📊</div>
       <div>
-        <h4>Sin visión consolidada del grupo</h4>
-        <p>Imposible ver en tiempo real la posición financiera de todas las empresas del grupo.</p>
+        <h4>Stock único y verdadero</h4>
+        <p>Un solo registro. Fin de la divergencia entre sistemas. Lo que dice el sistema, existe en el depósito.</p>
       </div>
     </div>
     <div class="pain-card fi">
-      <div class="pain-icon">📚</div>
+      <div class="pain-icon">💱</div>
       <div>
-        <h4>Catálogo desconectado del negocio</h4>
-        <p>Obras, autores y ediciones sin trazabilidad hacia ventas, stock ni producción.</p>
+        <h4>Multi-moneda automático</h4>
+        <p>EUR/USD/MXN con tipo de cambio Banxico actualizado diariamente. Sin ajustes manuales que coman márgenes.</p>
       </div>
     </div>
     <div class="pain-card fi">
-      <div class="pain-icon">🚚</div>
+      <div class="pain-icon">🔌</div>
       <div>
-        <h4>Distribución opaca</h4>
-        <p>Sin herramientas para gestionar representaciones de editoriales extranjeras y sus condiciones.</p>
+        <h4>API-first desde el día uno</h4>
+        <p>Amazon, MercadoLibre, SINLI, DILVE — el sistema habla todos los idiomas de la industria editorial.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ── FEATURES ── -->
 <section class="features" id="features">
-  <div class="features-header">
-    <span class="section-eyebrow fi">La solución</span>
-    <h2 class="section-h2 fi" style="margin-bottom:.5rem">Construido para la<br><em>especificidad editorial</em></h2>
-    <p class="section-lead fi" style="max-width:500px;margin:0 auto">Cada módulo diseñado con conocimiento real del negocio. No una adaptación de ERP genérico.</p>
+  <div class="features-header fi">
+    <span class="section-eyebrow">Módulos</span>
+    <h2 class="section-h2" style="max-width:480px;margin:0 auto">Construido para la<br><em>especificidad editorial</em></h2>
   </div>
   <div class="feat-grid">
     <div class="feat-card fi">
-      <div class="feat-icon">📚</div>
-      <h3>Catálogo unificado</h3>
-      <p>Obras, autores, ediciones y versiones. Títulos propios y representados con condiciones diferenciadas por editorial de origen.</p>
+      <div class="feat-icon">📖</div>
+      <h3>Catálogo Multi-producto</h3>
+      <p>Libros por ISBN con metadatos DILVE. Búsqueda automática al ingresar un código. Precios multi-moneda. Integrado con Google Books y Base Master del grupo.</p>
     </div>
-    <div class="feat-card fi">
-      <div class="feat-icon">🏭</div>
-      <h3>Producción editorial</h3>
-      <p>Seguimiento de tiradas, costos de impresión, fechas de entrega y gestión de stock por almacén y ubicación.</p>
+    <div class="feat-card fi" style="transition-delay:.06s">
+      <div class="feat-icon">🏛️</div>
+      <h3>Motor Fiscal Multi-país</h3>
+      <p>CFDI 4.0 México, AFIP Argentina, AEAT España. IVA 0% libros MX. Matriz configurable país × producto → tasa. Sin workarounds, sin atajos.</p>
     </div>
-    <div class="feat-card fi">
+    <div class="feat-card fi" style="transition-delay:.12s">
+      <div class="feat-icon">🔄</div>
+      <h3>Consignación y Venta Firme</h3>
+      <p>El modelo de negocio editorial como flujo nativo. Remesas de entrada, ciclos de liquidación, venta firme con devolución. El primer ERP que lo entiende de verdad.</p>
+    </div>
+    <div class="feat-card fi" style="transition-delay:.18s">
       <div class="feat-icon">🚚</div>
-      <h3>Distribución inteligente</h3>
-      <p>Pedidos, remitos, devoluciones. Librerías con condiciones comerciales específicas y trazabilidad de cada movimiento.</p>
+      <h3>WMS Logística Bonilla</h3>
+      <p>Portal propio para el operador logístico. Racks, recepción, picking, rutas, entrega con foto. Un solo stock, una sola verdad. Fin de la doble contabilidad.</p>
     </div>
-    <div class="feat-card fi">
+    <div class="feat-card fi" style="transition-delay:.24s">
       <div class="feat-icon">💰</div>
-      <h3>Finanzas del grupo</h3>
-      <p>Cuentas corrientes, tesorería consolidada y cartera de cobranzas con historial completo disponible.</p>
+      <h3>Tesorería y Cobranza</h3>
+      <p>CxC con aging en tiempo real, pagos a editoriales, conciliación bancaria, tipo de cambio histórico auditable. La caja siempre cuadra.</p>
+    </div>
+    <div class="feat-card fi" style="transition-delay:.3s">
+      <div class="feat-icon">📡</div>
+      <h3>Ingesta Multi-canal</h3>
+      <p>OC formales, Excel, PDF, email, API y SINLI — el sistema absorbe cualquier forma de pedido. La flexibilidad está en la entrada, adentro todo fluye igual.</p>
     </div>
     <div class="feat-card fi">
       <div class="feat-icon">📈</div>
-      <h3>Reporting ejecutivo</h3>
-      <p>Tableros en tiempo real por empresa y para el grupo consolidado. Del detalle operativo a la visión estratégica.</p>
+      <h3>Dashboard y Reportería</h3>
+      <p>27+ dashboards con datos reales. KPIs editoriales, rotación por título, aging de CxC, liquidaciones pendientes. Responde preguntas de negocio reales.</p>
     </div>
-    <div class="feat-card fi">
-      <div class="feat-icon">🔐</div>
-      <h3>Multi-tenant seguro</h3>
-      <p>Cada empresa con sus datos aislados bajo Row-Level Security. Una sola plataforma, múltiples realidades independientes.</p>
+    <div class="feat-card fi" style="transition-delay:.06s">
+      <div class="feat-icon">🌐</div>
+      <h3>Storefront B2C y B2B</h3>
+      <p>Tienda online propia. Portal de librerías para auto-servicio. Portal de editoriales para ver su stock y ventas en tiempo real. El editor como socio, no como proveedor.</p>
+    </div>
+    <div class="feat-card fi" style="transition-delay:.12s">
+      <div class="feat-icon">🗺️</div>
+      <h3>Multi-país y Multi-tenant</h3>
+      <p>Argentina, México, España — cada país tiene su motor fiscal y sus reglas comerciales. Cada editorial-cliente tiene sus datos aislados. Una arquitectura, infinitos mercados.</p>
     </div>
   </div>
 </section>
 
+<!-- ── ENTITIES ── -->
 <section class="entities" id="entidades">
-  <span class="section-eyebrow fi">Entidades del sistema</span>
-  <h2 class="section-h2 fi">Una plataforma,<br><em>cuatro tipos de empresa</em></h2>
-  <div class="entity-wrap fi">
+  <div class="fi" style="text-align:center">
+    <span class="section-eyebrow">Verticales</span>
+    <h2 class="section-h2">Una plataforma,<br><em>tres tipos de empresa</em></h2>
+  </div>
+  <div class="entity-wrap fi" style="transition-delay:.1s">
     <div class="entity-tabs">
-      <div class="etab active" onclick="showEnt(0)">Distribuidoras</div>
-      <div class="etab" onclick="showEnt(1)">Editoriales</div>
-      <div class="etab" onclick="showEnt(2)">Logísticas</div>
-      <div class="etab" onclick="showEnt(3)">Librerías</div>
+      <div class="etab active" onclick="setTab(0)">Editorial</div>
+      <div class="etab" onclick="setTab(1)">Distribuidora</div>
+      <div class="etab" onclick="setTab(2)">Librería</div>
     </div>
     <div class="epanel active" id="ep0">
       <div>
-        <h3>Distribu<span>idoras</span></h3>
-        <p>Nexo entre producción y mercado. Además de su fondo propio, gestionan catálogo y producción de editoriales extranjeras por cuenta y orden de la editorial. Tienen visibilidad completa del canal de ventas.</p>
+        <h3>Vertical <span>Editorial</span></h3>
+        <p>Para las casas editoriales del grupo y clientes externos. Producción de títulos, gestión de derechos, liquidación a autores, impresión bajo demanda. La editorial en una sola pantalla.</p>
       </div>
       <div class="module-list">
-        <span class="mod hot">Clientes y CRM</span>
-        <span class="mod hot">Cuentas Corrientes</span>
-        <span class="mod hot">Pedidos</span>
-        <span class="mod hot">Catálogo representado</span>
-        <span class="mod">Producción editorial</span>
-        <span class="mod">Precios y Descuentos</span>
-        <span class="mod">Tesorería</span>
-        <span class="mod">Proveedores</span>
-        <span class="mod">Stock y WMS</span>
-        <span class="mod">Reporting</span>
+        <span class="mod hot">Producción de libros</span>
+        <span class="mod hot">Órdenes de impresión</span>
+        <span class="mod">Print on Demand</span>
+        <span class="mod">Derechos de autor</span>
+        <span class="mod">Liquidación autores</span>
+        <span class="mod">Catálogo propio</span>
+        <span class="mod">Portal editor</span>
+        <span class="mod">DILVE / SINLI</span>
       </div>
     </div>
     <div class="epanel" id="ep1">
       <div>
-        <h3>Editor<span>iales</span></h3>
-        <p>Foco en la gestión de la obra: autores, derechos, ediciones, tiradas. Coordinan con las distribuidoras del grupo para la comercialización, y mantienen control editorial completo sobre su fondo.</p>
+        <h3>Vertical <span>Distribuidora</span></h3>
+        <p>El corazón del sistema — el modelo de negocio de Ladolibro México. Representación editorial, importación, consignación, logística tercerizada, facturación CFDI, tesorería multi-moneda. MVP activo hoy.</p>
       </div>
       <div class="module-list">
-        <span class="mod hot">Obras y autores</span>
-        <span class="mod hot">Derechos</span>
-        <span class="mod hot">Producción</span>
-        <span class="mod">Catálogo</span>
-        <span class="mod">Finanzas</span>
-        <span class="mod">Proveedores</span>
-        <span class="mod">Reporting</span>
+        <span class="mod hot">Consignación</span>
+        <span class="mod hot">Venta firme</span>
+        <span class="mod hot">CFDI 4.0 MX</span>
+        <span class="mod hot">WMS Bonilla</span>
+        <span class="mod hot">Tesorería</span>
+        <span class="mod hot">Multi-moneda</span>
+        <span class="mod">Sub-distribuidores</span>
+        <span class="mod">Portal librerías</span>
+        <span class="mod">SINLI / MasterEDI</span>
+        <span class="mod">Banxico API</span>
       </div>
     </div>
     <div class="epanel" id="ep2">
       <div>
-        <h3>Logís<span>ticas</span></h3>
-        <p>Gestión de almacenes, movimientos de stock, operadores logísticos externos. Control de ubicaciones, inventario en tiempo real y trazabilidad completa de cada unidad.</p>
+        <h3>Vertical <span>Librería</span></h3>
+        <p>Punto de venta completo para operar una librería o brindarlo como servicio. Stock propio, pedidos, administración, contabilidad básica. Y datos de venta para el editor — en tiempo real.</p>
       </div>
       <div class="module-list">
-        <span class="mod hot">WMS</span>
-        <span class="mod hot">Operadores logísticos</span>
-        <span class="mod hot">Ubicaciones</span>
-        <span class="mod">Ingresos y egresos</span>
-        <span class="mod">Inventario</span>
-        <span class="mod">Finanzas</span>
-        <span class="mod">Reporting</span>
-      </div>
-    </div>
-    <div class="epanel" id="ep3">
-      <div>
-        <h3>Libre<span>rías</span></h3>
-        <p>Punto de venta y gestión de consignaciones. Seguimiento de exhibición, devoluciones y liquidaciones. Historial de compras y condiciones comerciales personalizadas.</p>
-      </div>
-      <div class="module-list">
-        <span class="mod hot">Punto de venta</span>
-        <span class="mod hot">Consignaciones</span>
-        <span class="mod hot">Devoluciones</span>
-        <span class="mod">Cuentas Corrientes</span>
-        <span class="mod">Liquidaciones</span>
-        <span class="mod">Finanzas</span>
-        <span class="mod">Reporting</span>
+        <span class="mod">Punto de venta (POS)</span>
+        <span class="mod">Stock propio</span>
+        <span class="mod">Gestión de pedidos</span>
+        <span class="mod">Administración</span>
+        <span class="mod">Contabilidad básica</span>
+        <span class="mod">Dashboard ventas</span>
+        <span class="mod">Portal editor</span>
+        <span class="mod">Smart Replenishment</span>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ── TECH ── -->
 <section class="tech" id="tecnologia">
-  <span class="section-eyebrow fi">Stack tecnológico</span>
-  <h2 class="section-h2 fi" style="max-width:500px;margin:0 auto">Tecnología de presente,<br>arquitectura para escalar</h2>
-  <div class="tech-pills fi">
-    <span class="tech-pill">React 18</span>
-    <span class="tech-pill">TypeScript</span>
-    <span class="tech-pill">Supabase</span>
-    <span class="tech-pill">PostgreSQL</span>
-    <span class="tech-pill">Row-Level Security</span>
-    <span class="tech-pill">Tailwind CSS</span>
-    <span class="tech-pill">shadcn/ui</span>
-    <span class="tech-pill">PostgREST</span>
+  <span class="section-eyebrow fi">Tecnología</span>
+  <h2 class="section-h2 fi" style="max-width:500px;margin:0 auto">Tecnología de presente,<br><em>arquitectura para escalar</em></h2>
+  <p class="section-lead fi" style="max-width:520px;margin:1.25rem auto 0">React + Supabase PostgreSQL. API-first. Multi-tenant nativo. Row Level Security. ~442 tablas de base de datos. 141 sprints de desarrollo.</p>
+  <div class="tech-pills fi" style="transition-delay:.1s">
+    <span class="tech-pill">React / Vite</span>
+    <span class="tech-pill">Supabase PostgreSQL</span>
+    <span class="tech-pill">Row Level Security</span>
+    <span class="tech-pill">CFDI 4.0 (PAC SAT)</span>
+    <span class="tech-pill">DILVE API</span>
+    <span class="tech-pill">SINLI</span>
+    <span class="tech-pill">Banxico API</span>
+    <span class="tech-pill">Amazon SP-API</span>
+    <span class="tech-pill">MercadoLibre API</span>
     <span class="tech-pill">Multi-tenant</span>
-    <span class="tech-pill">REST API</span>
-    <span class="tech-pill">Lovable</span>
-    <span class="tech-pill">Edge Functions</span>
+    <span class="tech-pill">Metabooks</span>
+    <span class="tech-pill">MasterEDI</span>
   </div>
 </section>
 
+<!-- ── CTA ── -->
 <section class="cta" id="contacto">
   <div class="cta-orb1"></div>
   <div class="cta-orb2"></div>
-  <h2 class="fi">El ERP que la industria<br><span class="grad-text">editorial esperaba.</span></h2>
-  <p class="fi">Pensado desde adentro del negocio. Construido con tecnología de última generación.</p>
-  <div class="cta-domain fi">www.databasiccodex.com</div>
-  <div class="fi">
-    <a href="mailto:info@databasiccodex.com" class="btn-main">Solicitar acceso anticipado</a>
+  <h2 class="fi"><span class="grad-text">El libro tiene un sistema</span><br>a su altura.</h2>
+  <p class="fi" style="transition-delay:.08s">Databasic Codex está activo. Si sos parte del grupo o querés conocer la plataforma, accedé o solicitá una demo.</p>
+  <div class="cta-domain fi" style="transition-delay:.12s">app.databasiccodex.com</div>
+  <div class="cta-actions fi" style="transition-delay:.16s">
+    <a href="https://app.databasiccodex.com" class="btn-app" style="font-size:1.05rem;padding:1rem 2.5rem"><span class="btn-app-dot"></span>Acceder al ERP</a>
+    <a href="mailto:info@databasiccodex.com" class="btn-main">Solicitar Demo</a>
   </div>
 </section>
 
 <footer>
   <div class="footer-logo">Databasic<em>Codex</em></div>
-  <span>© 2026 Databasic Codex — ERP Editorial Multi-tenant</span>
-  <span>MX · AR · ES</span>
+  <span>Grupo Editorial · España · Argentina · México · 2026</span>
 </footer>
 
 <script>
-// Nav scroll
-window.addEventListener("scroll",()=>{
-  document.getElementById("nav").classList.toggle("scrolled",scrollY>50);
-});
+// ── NAV SCROLL ──
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40)
+})
 
-// Entity tabs
-function showEnt(i){
-  document.querySelectorAll(".etab").forEach((t,j)=>t.classList.toggle("active",i===j));
-  document.querySelectorAll(".epanel").forEach((p,j)=>p.classList.toggle("active",i===j));
-}
-
-// Counter animation
-function counter(el){
-  const t=+el.dataset.target,d=1800,s=performance.now();
-  (function f(n){
-    const p=Math.min((n-s)/d,1),e=1-Math.pow(1-p,3);
-    el.textContent=Math.round(e*t);
-    if(p<1)requestAnimationFrame(f);
-  })(s);
-}
-
-// Intersection observer
+// ── INTERSECTION OBSERVER ──
 const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');io.unobserve(e.target)}})
+},{threshold:.15,rootMargin:'0px 0px -60px 0px'})
+document.querySelectorAll('.fi').forEach(el=>io.observe(el))
+
+// ── ENTITY TABS ──
+function setTab(i){
+  document.querySelectorAll('.etab').forEach((t,j)=>t.classList.toggle('active',i===j))
+  document.querySelectorAll('.epanel').forEach((p,j)=>p.classList.toggle('active',i===j))
+}
+
+// ── STAT COUNTERS ──
+const statVals=document.querySelectorAll('.stat-val[data-target]')
+const sio=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.classList.add("v");
-      if(e.target.dataset.target)counter(e.target);
-      io.unobserve(e.target);
+    if(!e.isIntersecting)return
+    const el=e.target,target=+el.dataset.target,dur=1800
+    let start=null
+    const step=ts=>{
+      if(!start)start=ts
+      const p=Math.min((ts-start)/dur,1)
+      el.textContent=Math.floor(p*target)+(p<1?'':'')
+      if(p<1)requestAnimationFrame(step)
+      else el.textContent=target
     }
-  });
-},{threshold:.12});
-document.querySelectorAll(".fi,[data-target]").forEach(el=>io.observe(el));
+    requestAnimationFrame(step)
+    sio.unobserve(el)
+  })
+},{threshold:.5})
+statVals.forEach(el=>sio.observe(el))
 </script>
 </body>
 </html>
