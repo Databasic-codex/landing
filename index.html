@@ -536,24 +536,27 @@ window.addEventListener('scroll',()=>{
   document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40)
 })
 
-// ── INTERSECTION OBSERVER ──
+// ── REVEAL IN VIEW (definida primero para que anchor links la usen) ──
 function revealInView(){
   document.querySelectorAll('.fi:not(.v)').forEach(el=>{
     const r=el.getBoundingClientRect()
     if(r.top<window.innerHeight-40)el.classList.add('v')
   })
 }
-const io=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');io.unobserve(e.target)}})
-},{threshold:.1,rootMargin:'0px 0px -20px 0px'})
-document.querySelectorAll('.fi').forEach(el=>io.observe(el))
-// Reveal on anchor jump
-window.addEventListener('hashchange',()=>setTimeout(revealInView,120))
-// Reveal on scroll (fallback)
-window.addEventListener('scroll',revealInView,{passive:true})
-// Reveal anything already visible on load
-setTimeout(revealInView,100)
 
-// ── ENTITY TABS ──
-function setTab(i){
-  document.querySelectorAll('.etab').forEach((t,j)=>t.classList.toggle
+// ── ANCHOR LINKS (fix para overflow-x:hidden que rompe scroll nativo en Chrome) ──
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const id=a.getAttribute('href').slice(1)
+    const target=document.getElementById(id)
+    if(!target)return
+    e.preventDefault()
+    const offset=target.getBoundingClientRect().top+window.scrollY-72
+    window.scrollTo({top:offset,behavior:'smooth'})
+    setTimeout(revealInView,400)
+  })
+})
+
+// ── INTERSECTION OBSERVER ──
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(
